@@ -64,3 +64,25 @@ arrowDownButton.addEventListener('click', function () {
     const newPhoto = otherPhoto[photoView];
     newPhoto.classList.add('attiva');
 });
+
+
+
+
+//SET INTERVAL (INTERVALLO FOTO 3 SECONDI)
+
+setInterval(function () {
+    const currentFoto = document.querySelector('.slide.attiva');
+    currentFoto.classList.remove('attiva');
+
+    if (photoView >= slides.length - 1) {
+        photoView = 0;
+
+    } else {
+        photoView++;
+    }
+
+    const altraFoto = document.getElementsByClassName('slide');
+    const newFoto = altraFoto[photoView];
+    newFoto.classList.add('attiva');
+
+}, 3000);
